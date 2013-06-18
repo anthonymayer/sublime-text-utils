@@ -1,0 +1,5 @@
+[
+	{ "caption": "-" , "id":"side-bar-end-separator"},
+	{
+		"caption": "Copy Root Path", "id":"side-bar-git", "command": "path_to_clipboard"}
+]
