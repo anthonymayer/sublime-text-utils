@@ -3,5 +3,6 @@
 	{ "caption": "Copy Root Path", "id":"copy-root-path", "command": "path_to_clipboard"},
 	// Make this only show for python files if possible.
 	{ "caption": "Copy Testify Command", "id":"copy-testify-command", "command": "testify_for_current_path_to_clipboard"},
-	{ "caption": "Copy Import", "id":"copy-import-command", "command": "import_for_current_path_to_clipboard"}
+	{ "caption": "Copy Import", "id":"copy-import-command", "command": "import_for_current_path_to_clipboard"},
+	{ "caption": "Copy Dotted Path", "id":"copy-dotted-path-command", "command": "dotted_path_to_clipboard"}
 ]

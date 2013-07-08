@@ -12,6 +12,10 @@ class ImportForCurrentPathToClipboardCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		sublime.set_clipboard('from ' + dotted_path() + ' import ')
 
+class DottedPathToClipboardCommand(sublime_plugin.TextCommand):
+	def run(self, edit):
+		sublime.set_clipboard(dotted_path())
+
 def root_file_path():
 	return sublime.active_window().active_view().file_name().replace(
 		sublime.active_window().folders()[0] + '/', ''
