@@ -6,11 +6,19 @@ class PathToClipboardCommand(sublime_plugin.TextCommand):
 
 class TestifyForCurrentPathToClipboardCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
-		sublime.set_clipboard('testify -d ' + dotted_path())
+		sel = self.view.sel()
+
+		selectedText = ' ' + self.view.substr(sel[0]) if sel else ''
+
+		sublime.set_clipboard('testify -d ' + dotted_path() + selectedText)
 
 class ImportForCurrentPathToClipboardCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
-		sublime.set_clipboard('from ' + dotted_path() + ' import ')
+		sel = self.view.sel()
+
+		selectedText = self.view.substr(sel[0]) if sel else ''
+
+		sublime.set_clipboard('from ' + dotted_path() + ' import ' + selectedText)
 
 class DottedPathToClipboardCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
