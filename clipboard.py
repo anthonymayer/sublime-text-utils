@@ -1,3 +1,4 @@
+import os.path
 import re
 
 import sublime, sublime_plugin
@@ -22,11 +23,11 @@ class DottedPathToClipboardCommand(sublime_plugin.TextCommand):
 
 def root_file_path():
 	return sublime.active_window().active_view().file_name().replace(
-		sublime.active_window().folders()[0] + '/', ''
+		sublime.active_window().folders()[0] + os.path.sep, ''
 	)
 
 def dotted_path():
-	return re.sub(r'\.py|\.tmpl', '', root_file_path()).replace('/', '.')
+	return re.sub(r'\.py|\.tmpl', '', root_file_path()).replace(os.path.sep, '.')
 
 def get_selected_text(sublime_plugin_text_command):
 	sel = sublime_plugin_text_command.view.sel()
