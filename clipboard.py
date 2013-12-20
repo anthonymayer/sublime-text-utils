@@ -9,7 +9,7 @@ class PathToClipboardCommand(sublime_plugin.TextCommand):
 
 class TestifyForCurrentPathToClipboardCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
-		sublime.set_clipboard('testify -d ' + dotted_path() + get_selected_text(self))
+		sublime.set_clipboard('testify -d ' + dotted_path() + ' ' + get_selected_text(self))
 
 class ImportForCurrentPathToClipboardCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
