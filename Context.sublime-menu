@@ -5,5 +5,6 @@
     { "caption": "Copy Testify Command", "id":"copy-testify-command", "command": "testify_for_current_path_to_clipboard"},
     { "caption": "Copy Import", "id":"copy-import-command", "command": "import_for_current_path_to_clipboard"},
     { "caption": "Copy Dotted Path", "id":"copy-dotted-path-command", "command": "dotted_path_to_clipboard"},
-    { "caption": "Copy JS Test Command", "id": "js-test-to-clipboard-command", "command": "js_test_to_clipboard"}
+    { "caption": "Copy JS Test Command", "id": "js-test-to-clipboard-command", "command": "js_test_to_clipboard"},
+    { "caption": "Copy JS Browser Test Command", "id": "js-test-browser-to-clipboard-command", "command": "js_test_browser_to_clipboard"}
 ]

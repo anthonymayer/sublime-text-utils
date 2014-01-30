@@ -23,17 +23,27 @@ class DottedPathToClipboardCommand(sublime_plugin.TextCommand):
 
 class JsTestToClipboardCommand(sublime_plugin.TextCommand):
     def run(self, edit):
-        file_path = sublime.active_window().active_view().file_name()
-        if not '.js' in file_path:
-            return
-        js_file = open(file_path, 'r')
-        for line in js_file:
-            re_match = re.match('describe\([\'"](.*)[\'"]', line)
-            if re_match:
-                test_name = re_match.group(1)
-                break
-        js_file.close()
-        sublime.set_clipboard('js-tester ' + test_name)
+        test_name = get_js_test_name()
+        suite = re.match('yelp.test.(\w*)', test_name).group(1)
+        sublime.set_clipboard('js-tester ' + suite + ' -s ' + test_name)
+
+class JsTestBrowserToClipboardCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        test_name = get_js_test_name()
+        sublime.set_clipboard('/js_tester/' + test_name)
+
+def get_js_test_name():
+    file_path = sublime.active_window().active_view().file_name()
+    if not '.js' in file_path:
+        return
+    js_file = open(file_path, 'r')
+    for line in js_file:
+        re_match = re.match('describe\([\'"](.*)[\'"]', line)
+        if re_match:
+            test_name = re_match.group(1)
+            break
+    js_file.close()
+    return test_name
 
 def root_file_path():
     return sublime.active_window().active_view().file_name().replace(
