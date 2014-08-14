@@ -12,5 +12,12 @@ Current commands
 
 Installation
 
+NOTE: You may have to cd into your "Sublime Text 2" directory, instead of "Sublime Text 3" depending on your version.
+
+OS X:
+
+`$ cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/ && git clone git://github.com/anthonymayer/sublime-text-utils`
+
 Ubuntu:
- `$ cd ~/.config/sublime-text-3/Packages && git clone git://github.com/anthonymayer/sublime-text-utils`
+
+`$ cd ~/.config/sublime-text-3/Packages && git clone git://github.com/anthonymayer/sublime-text-utils`

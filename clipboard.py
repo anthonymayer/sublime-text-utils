@@ -32,6 +32,10 @@ class JsTestBrowserToClipboardCommand(sublime_plugin.TextCommand):
         test_name = get_js_test_name()
         sublime.set_clipboard('/js_tester/' + test_name)
 
+class InsertIpdb(sublime_plugin.TextCommand):
+    def run(self, edit):
+        self.view.insert(edit, self.view.sel()[0].begin(), 'import ipdb; ipdb.set_trace()')
+
 def get_js_test_name():
     file_path = sublime.active_window().active_view().file_name()
     if not '.js' in file_path:
