@@ -25,7 +25,7 @@ class JsTestToClipboardCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         test_name = get_js_test_name()
         suite = re.match('yelp.test.(\w*)', test_name).group(1)
-        sublime.set_clipboard('js-tester ' + suite + ' -s ' + test_name)
+        sublime.set_clipboard('tools/mocha.py ' + suite + ' -s ' + test_name)
 
 class JsTestBrowserToClipboardCommand(sublime_plugin.TextCommand):
     def run(self, edit):
